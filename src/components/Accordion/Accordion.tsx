@@ -10,7 +10,7 @@ export const Accordion = (props: AccordionPropsType) => {
 
     return (
        <div>
-          <AccordionTitle onClick={props.onClick} title={props.titleValue}/>
+          <AccordionTitle onClick={props.onClick}  title={props.titleValue}/>
            {!props.collapsed && <AccordionBody />}
        </div>
     );

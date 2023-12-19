@@ -1,11 +1,11 @@
 import './App.css';
-import {Rating} from './components/Rating';
-import {UncontrolledAccordion1} from './components/UncontrolledAccordion1';
-import {UncontrolledOnOff} from './components/UncontrolledOnOff';
-import {Accordion} from './components/Accordion';
-import {UncontrolledRating} from './components/UncontrolledRating';
+import {Rating} from './components/Rating/Rating';
+import {UncontrolledAccordion1} from './components/UncontrolledAccordion/UncontrolledAccordion1';
+import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
+import {Accordion} from './components/Accordion/Accordion';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 import {useState} from 'react';
-import {OnOff} from './components/OnOff';
+import {OnOff} from './components/OnOff/OnOff';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
             {/*<UncontrolledOnOff/>*/}
             {/*<Rating onClick={setRatingValue} value={ratingValue}/>*/}
             {/*<UncontrolledRating/>*/}
-            {/*<Accordion onClick={()=>setAccordionCollapsed(!accordionCollapsed)} titleValue={'MENU1'} collapsed={accordionCollapsed}/>*/}
+            <Accordion onClick={()=>setAccordionCollapsed(!accordionCollapsed)} titleValue={'MENU1'} collapsed={accordionCollapsed}/>
             {/*<UncontrolledAccordion1 titleValue={'Menu'}/>*/}
             <OnOff on={switchOn} onChange={setSwitchOn}/>
 

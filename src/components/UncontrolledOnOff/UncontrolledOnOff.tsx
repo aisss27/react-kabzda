@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 
-export const UncontrolledOnOff = () => {
-    const [on,setOn] = useState(true);
+type UncontrolledOnOffType = {
+    onChange: (on: boolean) => void
+    defaultOn? : boolean
+}
+export const UncontrolledOnOff = (props: UncontrolledOnOffType) => {
+    const [on,setOn] = useState(props.defaultOn ? props.defaultOn : false);
 
 
 const onStyle = {
