@@ -6,7 +6,7 @@ export default {
 
 
 
-export const UseEffect = () => {
+export const UseEffectExample = () => {
     const [fake,setFake] = useState(1)
     const [counter,setCounter] = useState(1);
 
@@ -33,6 +33,51 @@ export const UseEffect = () => {
             Hello, {counter} {fake}
             <button onClick={() => setFake(fake => fake + 1)}>+</button>
             <button onClick={() => setCounter(counter => counter + 1)}>+</button>
+        </>
+    )
+}
+
+
+export const SetTimeoutExample = () => {
+    const [fake,setFake] = useState(1)
+    const [counter,setCounter] = useState(1);
+
+    console.log('SetTimeoutExample')
+    useEffect(() => {
+        // setTimeout(() => {
+        //     console.log('SetTimeout');
+        //     document.title = counter.toString();
+        // }, 1000)
+
+        setInterval(() => {
+            console.log('tick: ' + counter)
+            setCounter(counter+1);
+        }, 1000)
+    },[counter]);
+
+
+    return(
+        <>
+            Hello, counter: {counter} - fake: {fake}
+            <button onClick={() => setFake(fake => fake + 1)}>+</button>
+
+        </>
+    )
+}
+
+
+export const RealTime = () => {
+    const [time, setTime] = useState(new Date());
+    useEffect(() => {
+        setInterval(() => {
+            setTime(new Date());
+        },1000)
+    }, []);
+
+    return(
+        <>
+            {time.toLocaleString()}
+
         </>
     )
 }
